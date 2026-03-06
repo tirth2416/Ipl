@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>IPL Players</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<h1>🏏 IPL Player Search</h1>
+
+<a href="/auction">
+<button>Auction Board</button>
+</a>
+
+<br><br>
+
+<form>
+
+<input type="text" name="search" placeholder="Search player">
+
+<button type="submit">Search</button>
+
+</form>
+
+<ul>
+
+{% for player in players %}
+
+<li>
+
+<a href="/player/{{player.id}}">
+
+{{player.name}}
+
+</a>
+
+</li>
+
+{% endfor %}
+
+</ul>
+
+</body>
+
+</html>
